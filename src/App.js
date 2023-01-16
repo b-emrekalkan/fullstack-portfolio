@@ -1,13 +1,18 @@
+import { useRef } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 
 function App() {
+  const homeRef = useRef(null)
+  const educationRef = useRef(null)
+  const workRef = useRef(null)
+  const portfolioRef = useRef(null)
   return (
    <>
-    <Navbar/>
+    <Navbar homeRef={homeRef} educationRef={educationRef} workRef={workRef} portfolioRef={portfolioRef}/>
     
     {/* PROFILE CARD STARTED */}
-    <div className="md:h-screen pt-10">
+    <div className="md:h-screen pt-10" ref={homeRef}>
       <div className="md:w-2/4 w-10/12 m-auto mt-10 mb-3">
         <h1 className='text-5xl mb-3'>Test Tester</h1>
         <p className="text-2xl text/cyan-900 ml-2">Fullstack Developer</p>
@@ -25,7 +30,7 @@ function App() {
 
 
     {/* EDUCATION CARD STARTED */}
-    <div className='md:h-screen pt-16'>
+    <div className='md:h-screen pt-16'  ref={educationRef}>
       <div className='mb-5 mx-5'>
         <h1 className='text-5xl mb-3'>My Education</h1>
         <p className="text-lg text-cyan-900 ">Here is the education that I have received.</p>
@@ -52,7 +57,7 @@ function App() {
     {/* EDUCATION CARD FINISHED */}
 
     {/* WORK EXPERIENCE STARTED */}
-    <div className='md:h-screen pt-16'>
+    <div className='md:h-screen pt-16'  ref={workRef}>
       <div className='mb-5 mx-5'>
         <h1 className='text-5xl mb-3'>My Work Experience</h1>
         <p className="text-lg text-cyan-900 ">Here is some of my most recent relevant work experience.</p>
@@ -79,7 +84,7 @@ function App() {
     {/* WORK EXPERIENCE FINISHED */}
 
     {/* PORTFOLIO STARTED */}
-    <div className='md:h-screen pt-16'>
+    <div className='md:h-screen pt-16'  ref={portfolioRef}>
       <div className='mb-5 mx-5'>
         <h1 className='text-5xl mb-3'>My Portfolio</h1>
         <p className="text-lg text-cyan-900 ">Take a look at some of my most recent projects that I have built and the linked code on GitHub.</p>
