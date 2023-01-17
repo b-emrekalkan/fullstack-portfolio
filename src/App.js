@@ -1,12 +1,23 @@
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 
 function App() {
+  useEffect(() => {
+    getData()
+  }, [])
+  
   const homeRef = useRef(null)
   const educationRef = useRef(null)
   const workRef = useRef(null)
   const portfolioRef = useRef(null)
+
+  const getData = async() => {
+    
+
+
+  }
+
   return (
    <>
     <Navbar homeRef={homeRef} educationRef={educationRef} workRef={workRef} portfolioRef={portfolioRef}/>
